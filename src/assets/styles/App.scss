@@ -1,0 +1,31 @@
+.table{
+    width: 50% !important;
+}
+
+.grafic{
+    width: 50%;
+
+    margin: 8% 0% 0%;
+    
+    position: fixed;
+    left: 50%;
+}
+
+.headers{
+    display: flex;
+    justify-content: space-between;
+}
+
+.controls{
+    padding: 3% 0 0 8%;
+    width: 50% !important;
+}
+
+.btn-secondary{
+    margin: 10px;
+}
+
+.porc{
+
+    width: 100px;
+}
