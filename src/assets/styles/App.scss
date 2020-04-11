@@ -1,57 +1,59 @@
-.table{
+.table {
     width: 50% !important;
 }
 
-.grafic{
+.grafic {
     width: 50%;
 
     margin: 8% 0% 0%;
-    
+
     position: fixed;
     left: 50%;
 }
 
-.headers{
+.headers {
     display: flex;
     justify-content: space-between;
 }
 
-.controls{
+.controls {
     padding: 3% 0 0 8%;
     width: 50% !important;
 }
 
-.btn-secondary{
+.btn-secondary {
     margin: 10px;
 }
 
-.porc{
+.porc {
 
     width: 100px;
 }
 
 @media only screen and (max-width: 770px) {
- 
-.grafic{
-    width: 100%;
-    margin: 8% 0% 0%;
-   position: static;
-    
-}
-.headers{
-    display: flex;
-    flex-direction: column;
-}
-.controls{
-    padding: 3% 0 0 8%;
-    width: 100% !important;
-}
 
-.table{
-    overflow-x: hidden;
-    width: 30% !important;
+    .grafic {
+        width: 100%;
+        margin: 8% 0% 0%;
+        position: static;
+
+    }
+
+    .headers {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .controls {
+        padding: 3% 0 0 8%;
+        width: 100% !important;
+    }
+
+    .table {
+        overflow-x: hidden;
+        width: 30% !important;
+    }
+
+
+
 }
-
-
-
-  }
