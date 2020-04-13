@@ -48,7 +48,7 @@ class Grafic extends React.Component {
 
         for (let j = 0; j < gd.length; j++) {
           j == 0 ? forData.push(gd[j][i].valor) : null;
-          forData.push(gd[j][i].valorAgregado + gd[j][i].valor)
+          forData.push(gd[j][i].total)
         }
         datasets.push({
           label: gd[0][i].nombre,

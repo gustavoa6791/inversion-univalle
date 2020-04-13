@@ -8,7 +8,7 @@ class Inicial extends Component {
     super(props)
     this.state = {
       disponible: 100000,
-      inversiones: [new Inversion("Inversion 1", 0, 0, 0)],
+      inversiones: [new Inversion("Inversion 1", 0, 0, 0, 0, 0,0)],
       reporteAnual: []
     }
   }
@@ -16,7 +16,7 @@ class Inicial extends Component {
   handleclick() {
     const inv = this.state.inversiones
     const index = inv.length + 1
-    inv.push(new Inversion(`Inversion ${index}`, 0, 0, 0))
+    inv.push(new Inversion(`Inversion ${index}`, 0, 0, 0, 0, 0, 0))
 
     this.setState({
       inversiones: inv
@@ -26,6 +26,7 @@ class Inicial extends Component {
   handlechange(e) {
     const inv = this.state.inversiones
     inv[e.target.name].valor = parseInt(e.target.value)
+  
 
     var valorTotal = 0
     inv.map((i, x) => {
@@ -39,6 +40,12 @@ class Inicial extends Component {
   }
   generarSimulacion() {
     const inv = this.state.inversiones
+
+    for (let i = 0; i < inv.length; i++) {
+      inv[i].reset()
+      
+    }
+   
     valorAgregado(inv)
 
       this.setState({
@@ -81,7 +88,6 @@ class Inicial extends Component {
                 </tr>
                 <tr>
                   <td>
-                    
                       Deduccion por mantener :
                       <div className="porc">
                     <div className="input-group mb-2">
@@ -91,10 +97,8 @@ class Inicial extends Component {
                         </div>
                       </div>
                     </div>
-
                   </td>
                   <td>
-                    
                       Deduccion por cambio:
                       <div className="porc">
                       <div className="input-group mb-2">
@@ -106,7 +110,6 @@ class Inicial extends Component {
                     </div>
                   </td>
                 </tr>
-
               </tbody>
             </table>
 
@@ -131,11 +134,7 @@ class Inicial extends Component {
                           </div>
                           <input className="form-control" type="number" name={x} onChange={() => { this.handlechange(event) }} placeholder="Ingrese valor" />
                         </div>
-
                       </td>
-
-
-
                     </tr>
                   )
                 })}
@@ -169,7 +168,6 @@ class Inicial extends Component {
                     <th>Ganancia</th>
                     <th>Total</th>
                   </tr>
-
                 </thead>
                 <tbody>
                   {i.map((i2, x2) => {
@@ -178,9 +176,9 @@ class Inicial extends Component {
                         <td>{i2.nombre}</td>
                         <td>${new Intl.NumberFormat().format(i2.valor)} </td>
                         <td>{i2.ganancia}%</td>
-                        <td></td>
+                        <td>{i2.deduccion}</td>
                         <td>${new Intl.NumberFormat().format(i2.valorAgregado)}</td>
-                        <td></td>
+                        <td>{i2.total}</td>
                       </tr>
                     )
                   })}
